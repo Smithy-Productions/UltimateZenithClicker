@@ -846,12 +846,13 @@ local page2 = {
                 MSG('error', "Cannot import data from future versions\nPlease update your game first!")
                 SFX.play('staffwarning')
                 return
-            elseif res1.mod and res1.mod ~= 'vanilla' then
-                MSG('dark', "Cannot import data from modded version")
+            elseif res1.mod and res1.mod ~= 'vanilla' and res1.mod ~= 'ultimate' then
+                MSG('dark', "Cannot import data from a different modded version")
                 SFX.play('staffwarning')
                 return
             end
             TABLE.update(STAT, res1)
+            STAT.mod = 'ultimate'
             BEST, ACHV = res2, res3
             setmetatable(BEST.highScore, Metatable.best_highscore)
             GAME.refreshLockState()

@@ -620,7 +620,7 @@ function INIT_DATA()
     }
 
     STAT = {
-        mod = 'vanilla',
+        mod = 'ultimate',
         version = nil, -- will be set after loading
         system = SYSTEM,
         modTime = os.time(),
